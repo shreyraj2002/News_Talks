@@ -17,12 +17,18 @@ public class webView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+
+
         toolbar = findViewById(R.id.toolbar);
         webView = findViewById(R.id.webview);
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
+
+        webView.getSettings().setLoadsImagesAutomatically(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
 
