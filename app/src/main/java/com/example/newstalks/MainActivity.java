@@ -5,11 +5,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     PagerAdapter pagerAdapter;
     TabItem mhome, mscience, mentertainment, mhealth, msports, mtech;
     Toolbar mtoolbar;
+    LottieAnimationView lottie;
 
     String api = "1847d071510947b7b7b2bd84a54ce09a";
 
@@ -40,12 +44,15 @@ public class MainActivity extends AppCompatActivity {
         mtoolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mtoolbar);
 
+        lottie = findViewById(R.id.lottie_animation);
+
         mhome = findViewById(R.id.home);
         mscience = findViewById(R.id.science);
         mentertainment = findViewById(R.id.entertainment);
         mhealth = findViewById(R.id.health);
         msports = findViewById(R.id.sports);
         mtech = findViewById(R.id.technology);
+
 
         ViewPager viewPager = findViewById(R.id.fragment_container);
         tabLayout = findViewById(R.id.include);
